@@ -9,7 +9,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class PreFullyLayer {
@@ -23,6 +22,8 @@ public class PreFullyLayer {
 
     private double trainingRate = 0.1;
 
+
+    //input прилетит 105
     public List<Double> apply(List<Matrix> input) {
         //convolute by 3-rd dimension
         List<List<Double>> listList = new ArrayList<>();
@@ -31,7 +32,11 @@ public class PreFullyLayer {
             for (int y = 0; y < input.get(0).getSize(2);y++){
                 double elem =0.0;
                 for (int i = 0; i <input.size();i++){
+                    for (int k = 0; k<coefficients.size()-1;k++){
+
+                    }
                     elem += input.get(i).get(x,y);
+
                 }
                 list.add(elem);
             }
